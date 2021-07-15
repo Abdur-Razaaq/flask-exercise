@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Learning Templates</title>
+</head>
+<body style="background-color:red">
+<p><img src="{{url_for('static', filename='waaa.png')}}"></p>
+<h1>Hi {{name}}. How are you Finding Flask Today?</h1>
+
+{%if name=='AJ':%}
+    <p>You are an Admin User</p>
+{%else%}
+    <p>You are a Normal User</p>
+{%endif %}
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for key in student_ages %}
+                <tr>
+                    <td>{{key}}</td>
+                    <td>{{student_ages[key]}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
